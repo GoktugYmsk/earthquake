@@ -1,0 +1,15 @@
+.App{
+  background: white;
+}
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+ul {
+  list-style: none;
+}
+

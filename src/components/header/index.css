@@ -1,0 +1,42 @@
+.headerNavbar {
+    display: flex;
+    align-items: center;
+    width: 774px;
+    height: 125px;
+    position: fixed;
+    transform: translateX(-47.4%);
+    background: white;
+    left: 50%;
+    z-index: 2;
+}
+
+.navbarFoto {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    position: relative;
+}
+
+.header {
+    font-size: 20px;
+    position: relative;
+    left: 10px;
+}
+
+.altHeader {
+    position: relative;
+    top: 30px;
+    display: flex;
+    right: 225px;
+}
+
+.imgThree {
+    width: 100px;
+    height: 80px;
+}
+
+.hr {
+    position: fixed;
+    width: 770px;
+    top: 110px;
+}

@@ -1,0 +1,103 @@
+.lowerBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 774px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 100px;
+    color: rgb(0, 0, 0);
+    z-index: 2;
+    transform: translateX(-47.5%);
+    left: 50%;
+}
+
+.lowerBar nav {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+}
+
+.lowerBar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.home {
+    top: 40px;
+    position: relative;
+    cursor: pointer;
+}
+
+.homeIcon {
+    display: flex;
+    position: relative;
+    left: 20px;
+    cursor: pointer;
+}
+
+.refresh {
+    left: 120px;
+    top: 35px;
+    position: relative;
+    cursor: pointer;
+}
+
+.refreshParagph {
+    position: relative;
+    right: 20px;
+}
+
+.magnifying {
+    display: flex;
+    position: relative;
+    width: 45px;
+    top: 30px;
+    left: 240px;
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+}
+
+.glass {
+    position: relative;
+    top: 40px;
+    right: 60px;
+    height: 45px;
+    width: 45px;
+}
+.exchange{
+    top: 40px;
+    cursor: pointer;
+    position: relative;
+    left: 380px;
+}
+
+
+.statistik {
+    position: relative;
+    cursor: pointer;
+}
+
+.map{
+    top: 35px;
+    position: relative;
+    left: 480px;
+    cursor: pointer;
+}
+
+.mapParagraph {
+
+    position: relative;
+}
+.ReactModal__Content.ReactModal__Content--after-open{
+    width: 200px;
+    height: 200px;
+    background: red;
+}
