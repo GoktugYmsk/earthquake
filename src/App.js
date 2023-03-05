@@ -8,14 +8,11 @@ import axios from 'axios';
 function App() {
   const [earthquakes, setEarthquakes] = useState([]);
 
-  {/*** */ }
-
   const refresh = () => {
     axios.get('https://api.orhanaydogdu.com.tr/deprem/kandilli/live')
       .then(response => setEarthquakes(response.data.result))
       .catch(error => console.log(error))
   }
-  
   useEffect(() => {
     refresh();
   }, []);
@@ -28,9 +25,5 @@ function App() {
     </div>
   );
 }
-
-/*
-  Lower => react router dom sorunu
-*/
 
 export default App;

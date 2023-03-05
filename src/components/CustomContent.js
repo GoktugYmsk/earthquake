@@ -11,7 +11,7 @@ function CustomContent({ earthquakes }) {
             const minute = duration % 60;
             return `${hour} saat ${minute} dakika önce`;
         }
-    }
+    }   
     const depthColor = (depth) => {
         if (depth > 2) {
             return { backgroundColor: 'rgb(210, 253, 206)' };

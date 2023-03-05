@@ -2,93 +2,53 @@ import React, { useState } from 'react';
 import { FiRefreshCcw } from 'react-icons/fi';
 import { FaHome, FaStackExchange, FaMapMarkedAlt } from 'react-icons/fa';
 import './index.css';
+import { Link, Route, Routes } from 'react-router-dom';
 import Modal from 'react-modal';
+import Statictic from './Statictic';
 
 function Lower({ refresh }) {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
+  Modal.setAppElement('#root');
 
-  const handleIconClick = (content) => {
-    setModalOpen(true);
-    setModalContent(content);
-  };
-  const handleCloseModal = () => {
-    setModalOpen(false);
-    setModalContent(null);
-  };
+  const [showModal, setShowModal] = useState(false);
+  const image4 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIr2rls4d-3sJHOzvVoNKuPh8gPWvjfezhCQ&usqp=CAU';
 
-  const handleMagnifyingClick = () => {
-    setModalOpen(true);
-    setModalContent(
-      <div className='modalFilter' >
-        <ul>
-        </ul>
-      </div>
-    );
+  const handleRefreshClick = () => {
+    setShowModal(true);
+    window.location.reload();
+    refresh();
   };
-
-  const image4 =
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIr2rls4d-3sJHOzvVoNKuPh8gPWvjfezhCQ&usqp=CAU';
 
   return (
     <div className="lowerBar">
       <nav>
         <ul>
-          <div className='home' >
-            <FaHome
-              className="homeIcon"
-              size="35"
-              color="black"
-              onClick={() => handleIconClick()}
-            />
+          <div className="home">
+            <FaHome className="homeIcon" size="35" color="black" />
             <p>Anasayfa</p>
           </div>
-          <div className='refresh' >
-            <FiRefreshCcw
-              className="refreshIcon"
-              size="35"
-              color="black"
-              onClick={refresh}
-            />
-            <p className='refreshParagraph' >Yenile</p>
+          <div onClick={handleRefreshClick} className="refresh">
+            <FiRefreshCcw className="refreshIcon" size="35" color="black" />
+            <p className="refreshParagraph">Yenile</p>
           </div>
-          <div onClick={handleMagnifyingClick} className='magnifying' >
+          <div className="magnifying">
             <img className="image4" src={image4} alt="icon" />
-            <p className='glass' >Filterele</p>
+            <p className="glass">Filterele</p>
           </div>
-          <div className='exchange' >
-            <FaStackExchange
-              className="exchangeIcon"
-              size="35"
-              color="black"
-              onClick={() => handleIconClick()}
-            />
-            <p className='statistik' >İstatistik</p>
+          <div className="exchange">
+            <FaStackExchange className="exchangeIcon" size="35" color="black" />
+            <p className="statistik">İstatistik</p>
           </div>
-          <div className='map' >
-            <FaMapMarkedAlt
-              className="mapIcon"
-              size="35"
-              color="black"
-              onClick={() => handleIconClick()}
-            />
-            <p className='mapParagraph' >Harita</p>
+          <div className="map">
+            <FaMapMarkedAlt className="mapIcon" size="35" color="black" />
+            <p className="mapParagraph">Harita</p>
           </div>
         </ul>
       </nav>
-      {/* Modal */}
-      {modalOpen && (
-        <div className="modalOverlay" onClick={handleCloseModal}>
-          <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-            <p>{modalContent}</p>
-          </div>
-        </div>
-      )}
-      {modalOpen && (
-        <Modal isOpen={modalOpen} onRequestClose={handleCloseModal}>
-          {modalContent}
-        </Modal>
-      )}
+      {/*
+        <Routes>
+          <Route path="/Statistic" element={<Statictic />} />
+        </Routes>
+  */}
     </div>
   );
 }

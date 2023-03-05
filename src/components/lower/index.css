@@ -96,8 +96,3 @@
 
     position: relative;
 }
-.ReactModal__Content.ReactModal__Content--after-open{
-    width: 200px;
-    height: 200px;
-    background: red;
-}
