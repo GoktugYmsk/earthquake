@@ -85,13 +85,15 @@
     position: relative;
     display: flex;
     bottom: 120px;
-    
+
     left: 720px;
     cursor: pointer;
 }
-.bootActive{
+
+.bootActive {
     display: none;
 }
-.modal-content{
+
+.modal-content {
     display: flex;
 }

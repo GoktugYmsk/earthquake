@@ -89,3 +89,17 @@
     left: 6px;
     padding: 0;
 }
+
+.popupChevron {
+    position: relative;
+    top: 77px;
+    right: 40px;
+    z-index: 2;
+}
+
+.popupChevronAlt {
+    position: relative;
+    top: 86px;
+    right: 40px;
+    z-index: 2;
+}

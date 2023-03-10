@@ -48,9 +48,15 @@
     cursor: pointer;
 }
 
-.refreshParagph {
+.refreshIcon {
     position: relative;
-    right: 20px;
+    top: 2px;
+}
+
+.refresh .refreshParagraph {
+    position: relative;
+    top: 6px;
+    right: 2px;
 }
 
 .magnifying {
@@ -67,8 +73,8 @@
 
 .glass {
     position: relative;
-    top: 40px;
-    right: 60px;
+    top: 45px;
+    right: 50px;
     height: 45px;
     width: 45px;
 }
@@ -80,10 +86,14 @@
     left: 380px;
 }
 
-
 .statistik {
     position: relative;
     cursor: pointer;
+    right: 8px;
+    top: 2px;
+    text-decoration: none !important;
+    color: black;
+
 }
 
 .map {
@@ -94,6 +104,23 @@
 }
 
 .mapParagraph {
-
     position: relative;
+    top: 4px;
+}
+
+.mainPage {
+    text-decoration: none !important;
+    color: black;
+}
+
+.mainStatistic {
+    background: white;
+    position: relative;
+    display: flex;
+    width: 772px;
+    height: 100vh;
+    bottom: 615px;
+    z-index: -3;
+    align-items: center;
+    justify-content: center;
 }
