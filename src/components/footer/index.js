@@ -1,22 +1,27 @@
 import React, { useState } from 'react';
+
 import { FiRefreshCcw } from 'react-icons/fi';
 import { FaHome, FaStackExchange, FaMapMarkedAlt } from 'react-icons/fa';
+import 'bootstrap/dist/css/bootstrap.css';
+
+import Popup from '../popup/';
 import './index.css';
-import { Link, Route, Routes } from 'react-router-dom';
-import Modal from 'react-modal';
-import Statictic from './Statictic';
 
-function Lower({ refresh }) {
-  Modal.setAppElement('#root');
 
+function Lower({ refresh, boot,handleClick }) {
   const [showModal, setShowModal] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
   const image4 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIr2rls4d-3sJHOzvVoNKuPh8gPWvjfezhCQ&usqp=CAU';
 
   const handleRefreshClick = () => {
     setShowModal(true);
-    window.location.reload();
     refresh();
   };
+
+  const handleMagnifyingClick = () => {
+    setShowPopup(true);
+  };
+
 
   return (
     <div className="lowerBar">
@@ -30,11 +35,11 @@ function Lower({ refresh }) {
             <FiRefreshCcw className="refreshIcon" size="35" color="black" />
             <p className="refreshParagraph">Yenile</p>
           </div>
-          <div className="magnifying">
+          <div onClick={handleMagnifyingClick} className="magnifying">
             <img className="image4" src={image4} alt="icon" />
             <p className="glass">Filterele</p>
           </div>
-          <div className="exchange">
+          <div onClick={boot} className="exchange">
             <FaStackExchange className="exchangeIcon" size="35" color="black" />
             <p className="statistik">İstatistik</p>
           </div>
@@ -44,6 +49,11 @@ function Lower({ refresh }) {
           </div>
         </ul>
       </nav>
+      {/** component olacak */}
+      {showPopup && (
+        <Popup setShow={setShowPopup} />
+      )}
+
       {/*
         <Routes>
           <Route path="/Statistic" element={<Statictic />} />

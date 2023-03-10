@@ -6,8 +6,9 @@
 }
 
 .earthquake-bar {
-    top: 110px;
+    top: 140px;
     height: 70px;
+    left: 3px;
     width: 770px;
     background-color: rgb(210, 253, 206);
     border-radius: 3px;
@@ -20,7 +21,9 @@
 
 .location {
     position: relative;
+    top: 8px;
     left: 70px;
+    color: black;
 }
 
 .mag {
@@ -33,7 +36,7 @@
     border-radius: 10px;
     font-size: 24px;
     position: relative;
-    bottom: 48px;
+    bottom: 30px;
     left: 10px;
     font-weight: 600;
 }
@@ -48,7 +51,7 @@
     position: relative;
     width: 20px;
     height: 20px;
-    bottom: 144px;
+    bottom: 127px;
     flex-direction: column;
     left: 200px;
 }
@@ -56,7 +59,7 @@
 .depth {
     display: flex;
     position: relative;
-    bottom: 86px;
+    bottom: 68px;
     left: 100px;
 }
 
@@ -65,7 +68,7 @@
     height: 20px;
     display: flex;
     position: relative;
-    bottom: 108px;
+    bottom: 92px;
     left: 70px;
 }
 
@@ -73,7 +76,7 @@
     display: flex;
     position: relative;
     left: 230px;
-    bottom: 164px;
+    bottom: 151px;
 }
 
 .chevron {
@@ -81,7 +84,14 @@
     height: 15px;
     position: relative;
     display: flex;
-    bottom: 150px;
+    bottom: 120px;
+    
     left: 720px;
     cursor: pointer;
+}
+.bootActive{
+    display: none;
+}
+.modal-content{
+    display: flex;
 }
