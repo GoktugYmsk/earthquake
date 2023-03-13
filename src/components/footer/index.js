@@ -8,7 +8,6 @@ import { Routes, Route, NavLink } from 'react-router-dom';
 import Popup from '../popup/';
 import './index.css';
 
-
 function Statictic() {
   return (
     <div className='mainStatistic' >
@@ -16,13 +15,13 @@ function Statictic() {
     </div>
   )
 }
+
 function Home() {
   return (
     <div>
     </div>
   )
 }
-
 
 function Lower({ refresh, boot, handleClick }) {
   const [showModal, setShowModal] = useState(false);
@@ -37,7 +36,6 @@ function Lower({ refresh, boot, handleClick }) {
   const handleMagnifyingClick = () => {
     setShowPopup(true);
   };
-
 
   return (
     <div className="lowerBar">

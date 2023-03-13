@@ -1,28 +1,42 @@
 import React from 'react'
 
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import ContentItem from '../contentItem';
 
-import '../content/index.css'
+function CustomContent({ earthquakes }) {
+  const image1 = 'https://cdn-icons-png.flaticon.com/512/3393/3393873.png'
 
-function Content({ earthquake, formatDuration, image1, duration, depthColor }) {
+  function formatDuration(duration) {
+    if (duration < 60) {
+      return `${duration} dakika önce`;
+    } else {
+      const hour = Math.floor(duration / 60);
+      const minute = duration % 60;
+      return `${hour} saat ${minute} dakika önce`;
+    }
+  }
 
-  console.log(earthquake)
+  const depthColor = (depth) => {
+    if (depth > 2) {
+      return { backgroundColor: 'rgb(210, 253, 206)' };
+    } else if (depth < 2) {
+      return { backgroundColor: 'rgb(253, 247, 221)' };
+    }
+  }
 
   return (
-    <li >
-      <div className='earthquake-bar' style={depthColor(earthquake.depth)}>
-        <p className='location' > <strong> {earthquake.title} {" "} </strong></p>
-        <p className='mag' > <span> {earthquake.mag} {" "} </span></p>
-        <strong value={earthquake.depth} className='depth' >{earthquake.depth} {""} km. </strong>
-        <img className='image' src={image1} alt="earthquake icon" />
-        <strong><FontAwesomeIcon className='chevron' icon={faChevronDown} /></strong>
-        <FontAwesomeIcon className='icon' icon={faCalendarAlt} />
-        <div className='date' >{formatDuration(duration)}</div>
-      </div>
-    </li>
+    <div className='earthquake'>
+      <ul>
+        {earthquakes.map((earthquake) => {
+          const depremDate = new Date(earthquake.date);
+          const now = new Date();
+          const duration = Math.floor((now - depremDate) / (1000 * 60));
+          return (
+            <ContentItem key={earthquake._id} earthquake={earthquake} formatDuration={formatDuration} image1={image1} duration={duration} depthColor={depthColor} />
+          )
+        })}
+      </ul>
+    </div>
   )
 }
 
-export default Content
+export default CustomContent

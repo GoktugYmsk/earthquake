@@ -111,6 +111,7 @@
 .mainPage {
     text-decoration: none !important;
     color: black;
+    border: none;
 }
 
 .mainStatistic {
@@ -119,7 +120,7 @@
     display: flex;
     width: 772px;
     height: 100vh;
-    bottom: 615px;
+    bottom: 705px;
     z-index: -3;
     align-items: center;
     justify-content: center;

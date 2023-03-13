@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import Header from './components/header';
 import Footer from './components/footer';
-import CustomContent from './components/CustomContent';
+import Content from './components/content';
 
 import './App.css';
 
@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <CustomContent earthquakes={earthquakes} />
+      <Content earthquakes={earthquakes} />
       <Footer refresh={refresh} />
     </div>
   );
