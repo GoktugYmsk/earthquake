@@ -1,31 +1,21 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 
-import Header from './components/header';
-import Footer from './components/footer';
-import Content from './components/content';
+
+import CustomComponent from './components/customComponent';
+
+import EarthquakeMap from './components/map';
 
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
-  const [earthquakes, setEarthquakes] = useState([]);
 
-  const refresh = async () => {
-    setEarthquakes([])
-    await axios.get('https://api.orhanaydogdu.com.tr/deprem/kandilli/live')
-      .then(response => setEarthquakes(response.data.result))
-      .catch(error => console.log(error))
-  }
 
-  useEffect(() => {
-    refresh();
-  }, []);
-  
   return (
     <div className="App">
-      <Header />
-      <Content earthquakes={earthquakes} />
-      <Footer refresh={refresh} />
+      <Routes>
+        <Route path="/" element={<CustomComponent />} />
+        <Route path="/earthquakeMap" element={<EarthquakeMap />} />
+      </Routes>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { FiRefreshCcw } from 'react-icons/fi';
 import { FaHome, FaStackExchange, FaMapMarkedAlt } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { Routes, Route, NavLink, useNavigate } from 'react-router-dom';
 
 import Popup from '../popup/';
 import './index.css';
@@ -24,18 +24,22 @@ function Home() {
 }
 
 function Lower({ refresh, boot, handleClick }) {
-  const [showModal, setShowModal] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const image4 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIr2rls4d-3sJHOzvVoNKuPh8gPWvjfezhCQ&usqp=CAU';
 
+  const navigate = useNavigate()
+
   const handleRefreshClick = () => {
-    setShowModal(true);
     refresh();
   };
 
   const handleMagnifyingClick = () => {
     setShowPopup(true);
   };
+
+  const handleMapClick = () => {
+    navigate('/earthquakeMap')
+  }
 
   return (
     <div className="lowerBar">
@@ -61,7 +65,7 @@ function Lower({ refresh, boot, handleClick }) {
               <p className="statistik">İstatistik</p>
             </div>
           </NavLink>
-          <div className="map">
+          <div onClick={handleMapClick} className="map">
             <FaMapMarkedAlt className="mapIcon" size="35" color="black" />
             <p className="mapParagraph">Harita</p>
           </div>

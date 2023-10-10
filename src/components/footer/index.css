@@ -114,6 +114,10 @@
     border: none;
 }
 
+.home p {
+    text-decoration: none;
+}
+
 .mainStatistic {
     background: white;
     position: relative;
